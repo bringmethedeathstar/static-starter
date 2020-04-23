@@ -6,12 +6,12 @@ require('laravel-mix-purgecss');
 const paths = {
   sass: {
     source: './src/assets/sass/main.scss',
-    dest: 'css/',
+    dest: 'dist/css/',
   },
   javascript: {
     source: './src/assets/js/main.js',
     singles: './src/assets/js/singles/*',
-    dest: 'js/',
+    dest: 'dist/js/',
   },
 };
 
@@ -25,6 +25,9 @@ mix
       },
     },
   })
+
+  // Copy static files "as is"
+  .copyDirectory('./src/static', 'dist/')
 
   // Concatenate & Compile Javascript
   .js(paths.javascript.source, paths.javascript.dest)
