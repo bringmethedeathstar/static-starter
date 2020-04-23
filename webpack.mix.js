@@ -17,16 +17,7 @@ const paths = {
 
 // Run mix
 mix
-  .webpackConfig({
-    resolve: {
-      alias: {
-        '@utilities': path.resolve(__dirname, 'src/assets/js/utilities'),
-        '@modules': path.resolve(__dirname, 'src/assets/js/modules'),
-      },
-    },
-  })
-
-  // Copy static files "as is"
+  .webpackConfig({})
   .copyDirectory('./src/static', 'dist/')
 
   // Concatenate & Compile Javascript
@@ -44,15 +35,12 @@ mix
 
 // Production only
 if (mix.inProduction()) {
-  // Remove any unused CSS using Purge
   mix
     .purgeCss({
       folders: ['src/site'],
       extensions: ['html', 'njk'],
       whitelist: [],
     })
-
-    // Minifies CSS & JS files
     .minify(paths.sass.dest + 'main.css')
     .minify(paths.javascript.dest + 'main.js');
 }
