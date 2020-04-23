@@ -35,7 +35,7 @@ Within our `site` folder, lives a `globals` folder. Here you'll find a `site.jso
 
 You'll also find a `navigation.json` file, which we use to loop over in our nav partial to generate our navigation. There's also a `helpers.js` file, which just contains a simple environment helper.
 
-Uncompiled SCSS and JS reside in the `resources` folder - as mentioned above, Mix will be watching these folders for any changes (you should restart the server when creating new partials/folders).
+Uncompiled SCSS and JS reside in the `src/assets` folder - as mentioned above, Mix will be watching these folders for any changes (you should restart the server when creating new partials/folders).
 
 In development mode, Skeleventy will reference `main.css` for it's stylesheet. This will be pretty chunky in filesize (around 800KB!), due to the amount of Tailwind utility classes - but don't worry, Skeleventy has you covered!
 

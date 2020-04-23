@@ -5,24 +5,23 @@ require('laravel-mix-purgecss');
 // Paths
 const paths = {
   sass: {
-    source: './resources/sass/main.scss',
+    source: './src/assets/sass/main.scss',
     dest: 'css/',
   },
   javascript: {
-    source: './resources/js/main.js',
-    singles: './resources/js/singles/*',
+    source: './src/assets/js/main.js',
+    singles: './src/assets/js/singles/*',
     dest: 'js/',
   },
 };
 
 // Run mix
 mix
-
   .webpackConfig({
     resolve: {
       alias: {
-        '@utilities': path.resolve(__dirname, 'resources/js/utilities'),
-        '@modules': path.resolve(__dirname, 'resources/js/modules'),
+        '@utilities': path.resolve(__dirname, 'src/assets/js/utilities'),
+        '@modules': path.resolve(__dirname, 'src/assets/js/modules'),
       },
     },
   })
@@ -44,9 +43,8 @@ mix
 if (mix.inProduction()) {
   // Remove any unused CSS using Purge
   mix
-
     .purgeCss({
-      folders: ['site'],
+      folders: ['src/site'],
       extensions: ['html', 'njk'],
       whitelist: [
         'body',
