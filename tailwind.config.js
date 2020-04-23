@@ -14,7 +14,9 @@ module.exports = {
         'dark-mode': { raw: '(prefers-color-scheme: dark)' },
       },
 
-      colors: {},
+      colors: {
+        primary: '#f53b57',
+      },
     },
   },
   variants: {},

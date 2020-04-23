@@ -5,3 +5,19 @@
 */
 
 @import 'tailwindcss/components';
+
+.btn {
+  @apply inline-block px-4 py-2 border-primary border-2 rounded-md cursor-pointer bg-primary text-white;
+
+  &:hover {
+    @apply bg-transparent text-primary;
+  }
+
+  &-other {
+    @apply bg-transparent text-primary;
+
+    &:hover {
+      @apply border-transparent;
+    }
+  }
+}

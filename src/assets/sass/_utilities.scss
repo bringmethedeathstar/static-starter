@@ -5,3 +5,7 @@
 */
 
 @import 'tailwindcss/utilities';
+
+.stack > * + * {
+  margin-top: var(--stack-gap, 1rem);
+}
